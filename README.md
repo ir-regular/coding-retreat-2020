@@ -12,35 +12,39 @@ At some point, I would like to write:
 
 and also I need to learn Erlang.
 
-## Learn Erlang
+## Language Learning
 
-### Docs
+### Erlang resources
 
-- [Getting Started with Erlang: User's Guide](http://erlang.org/doc/getting_started/users_guide.html)
-- [OTP Design Principles User's Guide](http://erlang.org/doc/design_principles/users_guide.html)
-- [Mnesia User's Guide](http://erlang.org/doc/apps/mnesia/users_guide.html)
+- :link: [Getting Started with Erlang: User's Guide](http://erlang.org/doc/getting_started/users_guide.html)
+- :link: [OTP Design Principles User's Guide](http://erlang.org/doc/design_principles/users_guide.html)
+- :link: [Mnesia User's Guide](http://erlang.org/doc/apps/mnesia/users_guide.html)
+- :book: :link: [Learn You Some Erlang](https://learnyousomeerlang.com/content)
+- :book: [Programming Erlang. Software for a Concurrent World](http://shop.oreilly.com/product/9781937785536.do) by Joe Armstrong
+- :book: [Erlang Programming. A Concurrent Approach to Software Development](http://shop.oreilly.com/product/9780596518189.do) 
+- :book: [Designing for Scalability with Erlang/OTP](http://shop.oreilly.com/product/0636920024149.do) by Francesco Cesarini, Steve Vinoski
+- :book: :link: [Études for Erlang](https://github.com/oreillymedia/etudes-for-erlang)
+- :book: :link: [The Erlang Runtime System](https://blog.stenmans.org/theBeamBook/)
+- :notebook: :link: [Making reliable distributed systems in the presence of software errors](https://erlang.org/download/armstrong_thesis_2003.pdf), Joe Armstrong's 2003 PhD thesis
+- :woman_student: [An Erlang Course](https://www.erlang.org/course) from the official website
+- :woman_student: University of Kent [Erlang master classes](https://www.cs.kent.ac.uk/ErlangMasterClasses/)
 
-### Books
+### C resources
 
-- [Learn You Some Erlang](https://learnyousomeerlang.com/content)
-- [Programming Erlang. Software for a Concurrent World](http://shop.oreilly.com/product/9781937785536.do) by Joe Armstrong
-- [Erlang Programming. A Concurrent Approach to Software Development](http://shop.oreilly.com/product/9780596518189.do) 
-- [Designing for Scalability with Erlang/OTP](http://shop.oreilly.com/product/0636920024149.do) by Francesco Cesarini, Steve Vinoski
-- [Études for Erlang](https://github.com/oreillymedia/etudes-for-erlang)
-- [The Erlang Runtime System](https://blog.stenmans.org/theBeamBook/)
+- :book: [Modern C](https://modernc.gforge.inria.fr/), Jens Gustedt
+- :book: [21st Century C](http://shop.oreilly.com/product/0636920025108.do), Ben Klemens
+- :link: [Linux kernel coding style](https://www.kernel.org/doc/html/latest/process/coding-style.html)
+- :link: [How to C in 2016](https://matt.sh/howto-c)
 
-### Papers
+### C++ resources
 
-- [Making reliable distributed systems in the presence of software errors](https://erlang.org/download/armstrong_thesis_2003.pdf), Joe Armstrong's 2003 PhD thesis
-
-### Courses
-
-- [An Erlang Course](https://www.erlang.org/course) from the official website
-- University of Kent [Erlang master classes](https://www.cs.kent.ac.uk/ErlangMasterClasses/)
+- :link: [The Definitive C++ Book Guide and List](https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list)
+- :link: [Learning C++](https://blog.tartanllama.xyz/learning-cpp/), Sy Brand - article, includes links to good blogs
+- :card_index_dividers: [C++ 2003](https://ankiweb.net/shared/info/1219517843) - a public Anki deck based on C++ Primer, 4th edition
 
 ## Write a toy compiler
 
-I have actually written more than one interpreter over the years, but never had to deal with a "...to assembly" part, or optimization. Also, I'd like to remind myself of how C works, so this section includes some C resources.
+I have actually written more than one interpreter over the years, but never had to deal with a "...to assembly" part, or optimization.
 
 ### Online
 
@@ -63,18 +67,6 @@ I have actually written more than one interpreter over the years, but never had 
 ### Tools
 
 - [LLVM](https://llvm.org)
-
-### C resources
-
-- [Modern C](https://modernc.gforge.inria.fr/), Jens Gustedt
-- [21st Century C](http://shop.oreilly.com/product/0636920025108.do), Ben Klemens
-- [Linux kernel coding style](https://www.kernel.org/doc/html/latest/process/coding-style.html)
-- [How to C in 2016](https://matt.sh/howto-c)
-
-### C++ resources
-
-- [The Definitive C++ Book Guide and List](https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list)
-- [Learning C++](https://blog.tartanllama.xyz/learning-cpp/), Sy Brand (includes links to good blogs)
 
 ## Write a toy debugger
 
