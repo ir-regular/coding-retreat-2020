@@ -87,3 +87,4 @@ And now I'm glad I included those C books up there!
 ## General resources
 
 - https://learnawesome.org/
+- [Emoji that work in Github](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md), a cheatsheet
