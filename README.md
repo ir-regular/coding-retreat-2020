@@ -84,6 +84,18 @@ And now I'm glad I included those C books up there!
 - [CMU Advanced Database Systems](https://15445.courses.cs.cmu.edu/fall2019/) course (incl. projects, course videos)
 - [Architecture of a Database System](https://dsf.berkeley.edu/papers/fntdb07-architecture.pdf), Joseph M. Hellerstein, Michael Stonebraker and James Hamilton
 
+## Write a toy filesystem
+
+As it happens "a toy filesystem" is something I've done previously (access to an e-mail inbox via POP, iirc). It was fun and I'd like to apply the same principle to something else. Really, I just want to play around with systems programming. And so:
+
+- [You can be a kernel hacker!](https://jvns.ca/blog/2014/09/18/you-can-be-a-kernel-hacker/)
+- [Eudyptula challenge](https://github.com/agelastic/eudyptula) (someone else's repo, since the original challenge is defunct)
+- https://wiki.osdev.org/Main_Page
+- https://kernelnewbies.org/
+- :book: "Modern Operating Systems", Andrew S. Tanenbaum
+- :book: ["Operating Systems: Three Easy Pieces"](http://pages.cs.wisc.edu/~remzi/OSTEP/), Remzi H. Arpaci-Dusseau and Andrea C. Arpaci-Dusseau
+- :book: ["Advanced Linux Programming"](https://www.oreilly.com/library/view/advanced-linux-programming/0735710430/), Alex Samuel, Jeffrey Oldham, Mark Mitchell
+
 ## General resources
 
 - https://learnawesome.org/
