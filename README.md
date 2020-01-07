@@ -91,3 +91,7 @@ And now I'm glad I included those C books up there!
 - [Readings in Database Systems](http://www.redbook.io) aka "Red Book"
 - [CMU Advanced Database Systems](https://15445.courses.cs.cmu.edu/fall2019/) course (incl. projects, course videos)
 - [Architecture of a Database System](https://dsf.berkeley.edu/papers/fntdb07-architecture.pdf), Joseph M. Hellerstein, Michael Stonebraker and James Hamilton
+
+## General resources
+
+- https://learnawesome.org/
