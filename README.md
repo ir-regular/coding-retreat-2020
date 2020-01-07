@@ -84,3 +84,10 @@ And now I'm glad I included those C books up there!
 - [How debuggers work](https://eli.thegreenplace.net/tag/debuggers), Eli Bendersky (and also follow the linked references)
 - [How debuggers really work](https://github.com/levex/debugger-talk/blob/master/article_opensourcecom/article.md), Levente Kurusa, and the talk: [slides](https://github.com/levex/debugger-talk/tree/master/talk) and [recording](https://archive.org/details/lca2018-Lets_write_a_Debugger)
 - [Loading and ptrace'ing a process on Linux](http://system.joekain.com/2015/06/08/debugger.html), part of a series [Writing a Debugger](http://system.joekain.com/debugger/)
+
+## Write a toy relational database
+
+- [Let's build a simple database](https://cstack.github.io/db_tutorial/), someone did this already :)
+- [Readings in Database Systems](http://www.redbook.io) aka "Red Book"
+- [CMU Advanced Database Systems](https://15445.courses.cs.cmu.edu/fall2019/) course (incl. projects, course videos)
+- [Architecture of a Database System](https://dsf.berkeley.edu/papers/fntdb07-architecture.pdf), Joseph M. Hellerstein, Michael Stonebraker and James Hamilton
