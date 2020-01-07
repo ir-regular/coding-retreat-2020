@@ -96,6 +96,10 @@ As it happens "a toy filesystem" is something I've done previously (access to an
 - :book: ["Operating Systems: Three Easy Pieces"](http://pages.cs.wisc.edu/~remzi/OSTEP/), Remzi H. Arpaci-Dusseau and Andrea C. Arpaci-Dusseau
 - :book: ["Advanced Linux Programming"](https://www.oreilly.com/library/view/advanced-linux-programming/0735710430/), Alex Samuel, Jeffrey Oldham, Mark Mitchell
 
+## Cryptography
+
+- [the cryptopals crypto challenges](https://cryptopals.com/)
+
 ## General resources
 
 - https://learnawesome.org/
