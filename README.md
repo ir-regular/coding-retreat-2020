@@ -27,6 +27,7 @@ and also I need to learn Erlang.
 - [Erlang Programming. A Concurrent Approach to Software Development](http://shop.oreilly.com/product/9780596518189.do) 
 - [Designing for Scalability with Erlang/OTP](http://shop.oreilly.com/product/0636920024149.do) by Francesco Cesarini, Steve Vinoski
 - [Études for Erlang](https://github.com/oreillymedia/etudes-for-erlang)
+- [The Erlang Runtime System](https://blog.stenmans.org/theBeamBook/)
 
 ### Papers
 
@@ -36,3 +37,40 @@ and also I need to learn Erlang.
 
 - [An Erlang Course](https://www.erlang.org/course) from the official website
 - University of Kent [Erlang master classes](https://www.cs.kent.ac.uk/ErlangMasterClasses/)
+
+## Write a toy compiler
+
+I have actually written more than one interpreter over the years, but never had to deal with a "...to assembly" part, or optimization. Also, I'd like to remind myself of how C works, so this section includes some C resources.
+
+### Online
+
+- [Let's Build a Compiler](https://compilers.iecc.com/crenshaw/), Jack Crenshaw
+- [Writing a C Compiler](https://norasandler.com/archive/), Nora Sadler (based on Ghuloum’s paper)
+- [Someone's nice summary on Stackoverflow](https://softwareengineering.stackexchange.com/a/165558)
+
+### Books
+
+- [Crafting Interpreters](https://craftinginterpreters.com/), Bob Nystrom
+- Compilers: Principles, Techniques, and Tools, Alfred V. Aho, Monica S. Lam, Ravi Sethi, Jeffrey D. Ullman
+- [Modern Compiler Design](https://dickgrune.com/Books/MCD_2nd_Edition/), Dick Grune, Henri E. Bal, Ceriel J.H. Jacobs, Koen G. Langendoen
+- Compiler Construction, Niklaus Wirth
+
+### Papers
+
+- [An Incremental Approach to Compiler Construction](http://scheme2006.cs.uchicago.edu/11-ghuloum.pdf), Abdulaziz Ghuloum
+- [A Nanopass Framework for Compiler Education](https://www.semanticscholar.org/paper/A-Nanopass-Framework-for-Compiler-Education%E2%88%97-Sarkar-Waddell/ef63ccac82166f1062b05c79c00e8930c191307a), Dipanwita Sarkar, Oscar Waddell, R. Kent Dybvig
+
+### Tools
+
+- [LLVM](https://llvm.org)
+
+### C resources
+
+- [Modern C](https://modernc.gforge.inria.fr/), Jens Gustedt
+- [21st Century C](http://shop.oreilly.com/product/0636920025108.do), Ben Klemens
+- [Linux kernel coding style](https://www.kernel.org/doc/html/latest/process/coding-style.html)
+- [How to C in 2016](https://matt.sh/howto-c)
+
+### C++ resources
+
+- [The Definitive C++ Book Guide and List](https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list)
