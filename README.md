@@ -96,9 +96,24 @@ As it happens "a toy filesystem" is something I've done previously (access to an
 - :book: ["Operating Systems: Three Easy Pieces"](http://pages.cs.wisc.edu/~remzi/OSTEP/), Remzi H. Arpaci-Dusseau and Andrea C. Arpaci-Dusseau
 - :book: ["Advanced Linux Programming"](https://www.oreilly.com/library/view/advanced-linux-programming/0735710430/), Alex Samuel, Jeffrey Oldham, Mark Mitchell
 
-## Cryptography
+## Try at least one CTF
 
-- [the cryptopals crypto challenges](https://cryptopals.com/)
+Turns out I messed up terminology: CTFs are competitions with specific dates, whereas online challenges are called wargames. Fine. I want to try solving at least one wargame.
+
+### Learning materials
+
+- :link: [How to Get Started in CTF](https://www.endgame.com/blog/technical-blog/how-get-started-ctf) with a list of books etc
+- :link: [What is CTF and how to get started!](https://dev.to/atan/what-is-ctf-and-how-to-get-started-3f04) learning resources, links to challenges etc
+- :book: :link: [CTF Field Guide](https://trailofbits.github.io/ctf/)
+- :book: :link: [CTF Resources](https://ctfs.github.io/resources/)
+
+### Wargames
+
+- [OverTheWire](https://overthewire.org/wargames/) teaches some of the basic skills
+- [cryptopals](https://cryptopals.com/), cryptography challenges
+- [Micro Corruption](https://microcorruption.com/login) teaches assembly, low-level debugger use
+- [Smash the Stack](http://smashthestack.org/wargames.html)
+- [a list of permanent CTF challenges / wargames](http://captf.com/practice-ctf/)
 
 ## General resources
 
