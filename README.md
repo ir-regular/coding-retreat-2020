@@ -74,3 +74,13 @@ I have actually written more than one interpreter over the years, but never had 
 ### C++ resources
 
 - [The Definitive C++ Book Guide and List](https://stackoverflow.com/questions/388242/the-definitive-c-book-guide-and-list)
+- [Learning C++](https://blog.tartanllama.xyz/learning-cpp/), Sy Brand (includes links to good blogs)
+
+## Write a toy debugger
+
+And now I'm glad I included those C books up there!
+
+- [Writing a Linux Debugger](https://blog.tartanllama.xyz/posts/), Sy Brand
+- [How debuggers work](https://eli.thegreenplace.net/tag/debuggers), Eli Bendersky (and also follow the linked references)
+- [How debuggers really work](https://github.com/levex/debugger-talk/blob/master/article_opensourcecom/article.md), Levente Kurusa, and the talk: [slides](https://github.com/levex/debugger-talk/tree/master/talk) and [recording](https://archive.org/details/lca2018-Lets_write_a_Debugger)
+- [Loading and ptrace'ing a process on Linux](http://system.joekain.com/2015/06/08/debugger.html), part of a series [Writing a Debugger](http://system.joekain.com/debugger/)
