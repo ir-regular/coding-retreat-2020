@@ -115,6 +115,17 @@ Turns out I messed up terminology: CTFs are competitions with specific dates, wh
 - [Smash the Stack](http://smashthestack.org/wargames.html)
 - [a list of permanent CTF challenges / wargames](http://captf.com/practice-ctf/)
 
+## Put together a cyberdeck
+
+:sob::point_right::pound:
+
+- [/r/cyberDeck](https://www.reddit.com/r/cyberDeck/)
+- [/r/MechanicalKeyboards](https://www.reddit.com/r/MechanicalKeyboards/)
+- [/r/MechanicalKeyboardsUK](https://www.reddit.com/r/MechanicalKeyboardsUK/)
+- [/r/AnnePro](https://www.reddit.com/r/AnnePro/)
+- [NXP i.MX7D Starter Kit](https://shop.technexion.com/pico-pi-imx7-startkit-rainbow-hat.html) for Android Things
+- there exists a [London Hackspace](https://london.hackspace.org.uk/) except, annoyingly, the whole of London is in the way
+
 ## General resources
 
 - https://learnawesome.org/
