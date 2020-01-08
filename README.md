@@ -51,6 +51,7 @@ I have actually written more than one interpreter over the years, but never had 
 - [Let's Build a Compiler](https://compilers.iecc.com/crenshaw/), Jack Crenshaw
 - [Writing a C Compiler](https://norasandler.com/archive/), Nora Sadler (based on Ghuloum’s paper)
 - [Someone's nice summary on Stackoverflow](https://softwareengineering.stackexchange.com/a/165558)
+- [Compilers](https://lagunita.stanford.edu/courses/Engineering/Compilers/Fall2014/about), a course from Stanford University
 
 ### Books
 
@@ -58,6 +59,8 @@ I have actually written more than one interpreter over the years, but never had 
 - Compilers: Principles, Techniques, and Tools, Alfred V. Aho, Monica S. Lam, Ravi Sethi, Jeffrey D. Ullman
 - [Modern Compiler Design](https://dickgrune.com/Books/MCD_2nd_Edition/), Dick Grune, Henri E. Bal, Ceriel J.H. Jacobs, Koen G. Langendoen
 - Compiler Construction, Niklaus Wirth
+- [Practical Compiler Construction](http://www.t3x.org/reload/index.html), Nils Holm
+- A Retargetable C Compiler: Design and Implementation describes [lcc](https://sites.google.com/site/lccretargetablecompiler/) - [toc](https://sites.google.com/site/lccretargetablecompiler/toc) and [lcc v. 4.2 code](https://github.com/drh/lcc), not the same as the version described in the book
 
 ### Papers
 
