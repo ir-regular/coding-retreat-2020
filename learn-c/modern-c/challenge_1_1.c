@@ -2,23 +2,41 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "mc_sort.h"
+#include "mc_gen.h"
+
+void test_int_sort(size_t list_len);
+void test_double_sort(size_t list_len);
 
 int main(int argc, char *argv[argc + 1])
 {
 	size_t const list_len = 6;
-	int list[list_len] = { 4, 6, 1, 5, 3, 7 };
-	size_t size = sizeof(int);
+
+	test_int_sort(list_len);
+	test_double_sort(list_len);
+
+	return EXIT_SUCCESS;
+}
+
+void test_int_sort(size_t list_len)
+{
+	int *list = mc_gen_rand_int(list_len);
+	size_t const size = sizeof(int);
 
 	assert(!is_sorted(list_len, list, size, int_compare));
 	merge_sort(list_len, list, size, int_compare);
 	assert(is_sorted(list_len, list, size, int_compare));
 
-	double double_list[list_len] = { 4, 6, 1, 5, 3, 7 };
-	size = sizeof(double);
+	free(list);
+}
 
-	assert(!is_sorted(list_len, double_list, size, double_compare));
-	merge_sort(list_len, double_list, size, double_compare);
-	assert(is_sorted(list_len, double_list, size, double_compare));
+void test_double_sort(size_t list_len)
+{
+	double *list = mc_gen_rand_double(list_len);
+	size_t const size = sizeof(double);
 
-	return EXIT_SUCCESS;
+	assert(!is_sorted(list_len, list, size, double_compare));
+	merge_sort(list_len, list, size, double_compare);
+	assert(is_sorted(list_len, list, size, double_compare));
+
+	free(list);
 }
