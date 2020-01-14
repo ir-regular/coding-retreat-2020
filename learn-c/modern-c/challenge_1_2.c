@@ -2,14 +2,14 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "mc_gen.h"
 
 bool is_sorted(size_t list_len, int list[list_len]);
 void quick_sort(size_t len, int list[len]);
 void quick_sort2(size_t start, size_t end, int *list);
 size_t partition(size_t start, size_t end, int *list);
-void swap(size_t i, size_t j, int *list);
-void print_list(size_t len, int list[len]);
+void swap(void *a, void *b, void *buf, size_t size);
 
 void test_int_sort(size_t const list_len);
 void test_swap(void);
@@ -28,11 +28,16 @@ int main(int argc, char *argv[argc + 1])
 
 void test_swap(void)
 {
+        size_t const size = sizeof(int);
         int list[3] = {1, 2, 3};
+        void *buf = malloc(size);
 
-        swap(0, 2, list);
+        swap((void *)list, (void *)list + 2 * size, buf, size);
+
+        free(buf);
 
         assert(list[0] == 3);
+        assert(list[1] == 2);
         assert(list[2] == 1);
 }
 
@@ -99,9 +104,11 @@ void quick_sort2(size_t start, size_t end, int *list)
 
 size_t partition(size_t start, size_t end, int *list)
 {
+        size_t const size = sizeof(int);
 	int pivot = list[(start + end) / 2];
 	int less_than = start - 1; // can be -1 when just starting out
 	int more_than = end + 1;
+	void *swap_buf = malloc(size);
 
 	while (true) {
 		do {
@@ -116,24 +123,17 @@ size_t partition(size_t start, size_t end, int *list)
 			break;
 		}
 
-		swap(less_than, more_than, list);
+		swap((void *)list + less_than * size, (void *)list + more_than * size, swap_buf, size);
 	}
+
+	free(swap_buf);
 
 	return more_than;
 }
 
-void swap(size_t i, size_t j, int *list)
+void swap(void *a, void *b, void *buf, size_t size)
 {
-	size_t temp = list[i];
-	list[i] = list[j];
-	list[j] = temp;
-}
-
-void print_list(size_t len, int list[len])
-{
-	printf("[");
-	for (size_t i = 0; i < len; i++) {
-		printf(" %d", list[i]);
-	}
-	printf(" ]\n");
+	memmove(buf, a, size);
+	memmove(a, b, size);
+	memmove(b, buf, size);
 }
