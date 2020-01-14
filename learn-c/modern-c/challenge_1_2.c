@@ -48,7 +48,7 @@ void quick_sort(size_t start, size_t end, int *list)
 	size_t pivot_i = partition(start, end, list);
 
 	if (pivot_i > 0) {
-		quick_sort(start, pivot_i - 1, list);
+		quick_sort(start, pivot_i, list);
 	}
 
 	quick_sort(pivot_i + 1, end, list);
