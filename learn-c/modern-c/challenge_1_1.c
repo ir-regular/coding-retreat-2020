@@ -22,9 +22,9 @@ void test_int_sort(size_t list_len)
 	int *list = mc_gen_rand_int(list_len);
 	size_t const size = sizeof(int);
 
-	assert(!is_sorted(list_len, list, size, int_compare));
-	merge_sort(list_len, list, size, int_compare);
-	assert(is_sorted(list_len, list, size, int_compare));
+	assert(!mc_is_sorted(list_len, list, size, mc_int_compare));
+	mc_merge_sort(list_len, list, size, mc_int_compare);
+	assert(mc_is_sorted(list_len, list, size, mc_int_compare));
 
 	free(list);
 }
@@ -34,9 +34,9 @@ void test_double_sort(size_t list_len)
 	double *list = mc_gen_rand_double(list_len);
 	size_t const size = sizeof(double);
 
-	assert(!is_sorted(list_len, list, size, double_compare));
-	merge_sort(list_len, list, size, double_compare);
-	assert(is_sorted(list_len, list, size, double_compare));
+	assert(!mc_is_sorted(list_len, list, size, mc_double_compare));
+	mc_merge_sort(list_len, list, size, mc_double_compare);
+	assert(mc_is_sorted(list_len, list, size, mc_double_compare));
 
 	free(list);
 }

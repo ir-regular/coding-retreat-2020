@@ -2,7 +2,7 @@
 #include <string.h>
 #include "mc_sort.h"
 
-int int_compare(void const *a, void const *b)
+int mc_int_compare(void const *a, void const *b)
 {
 	int const *int_a = a;
 	int const *int_b = b;
@@ -10,7 +10,7 @@ int int_compare(void const *a, void const *b)
 	return *int_a > *int_b ? 1 : (*int_a == *int_b ? 0 : -1);
 }
 
-int double_compare(void const *a, void const *b)
+int mc_double_compare(void const *a, void const *b)
 {
 	double const *double_a = a;
 	double const *double_b = b;
@@ -18,7 +18,7 @@ int double_compare(void const *a, void const *b)
 	return *double_a > *double_b ? 1 : (*double_a == *double_b ? 0 : -1);
 }
 
-bool is_sorted(size_t len, void *list, size_t size,
+bool mc_is_sorted(size_t len, void *list, size_t size,
 	       int (*mc_compare)(const void *a, const void *b))
 {
 	void *current = list;
@@ -38,7 +38,7 @@ void merge(size_t list_len, void *list, size_t buffer_len, void *buffer,
 	   void *result, size_t size,
 	   int (*mc_compare)(const void *a, const void *b));
 
-void merge_sort(size_t len, void *list, size_t size,
+void mc_merge_sort(size_t len, void *list, size_t size,
 		int (*mc_compare)(const void *a, const void *b))
 {
 	size_t buf_len = len / 2;
