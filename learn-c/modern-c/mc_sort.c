@@ -19,7 +19,7 @@ int mc_double_compare(void const *a, void const *b)
 }
 
 bool mc_is_sorted(size_t len, void *list, size_t size,
-	       int (*mc_compare)(const void *a, const void *b))
+		  int (*mc_compare)(const void *a, const void *b))
 {
 	void *current = list;
 	for (size_t i = 0; i < len - 1; i++) {
@@ -39,10 +39,15 @@ void merge(size_t list_len, void *list, size_t buffer_len, void *buffer,
 	   int (*mc_compare)(const void *a, const void *b));
 
 void mc_merge_sort(size_t len, void *list, size_t size,
-		int (*mc_compare)(const void *a, const void *b))
+		   int (*mc_compare)(const void *a, const void *b))
 {
 	size_t buf_len = len / 2;
 	void *buffer = malloc(len * size);
+
+	if (buffer == 0) {
+		exit(EXIT_FAILURE);
+	}
+
 	memset(buffer, 0, buf_len * size);
 
 	merge_sort2(len, list, buffer, list, size, mc_compare);
