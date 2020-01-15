@@ -7,8 +7,8 @@
 #include "mc_gen.h"
 #include "mc_sort.h"
 
-bool is_sorted(size_t list_len, int list[list_len]);
-void quick_sort(size_t len, int list[len]);
+void quick_sort(size_t len, void *list, size_t size,
+        int (*compare)(void const *a, void const *b));
 void quick_sort2(void *start, void *end, size_t size,
         int (*compare)(void const *a, void const *b));
 void *partition(void *start, void *end, size_t size,
@@ -16,6 +16,7 @@ void *partition(void *start, void *end, size_t size,
 void swap(void *a, void *b, void *buf, size_t size);
 
 void test_int_sort(size_t const list_len);
+void test_double_sort(size_t const list_len);
 void test_swap(void);
 void test_partition(void);
 
@@ -26,6 +27,7 @@ int main(int argc, char *argv[argc + 1])
         test_swap();
         test_partition();
         test_int_sort(list_len);
+        test_double_sort(list_len);
 
 	return EXIT_SUCCESS;
 }
@@ -68,28 +70,33 @@ void test_partition(void)
 
 void test_int_sort(size_t const list_len)
 {
-        int *list = mc_gen_rand_int(list_len);
+        size_t size = sizeof(int);
+        void *list = mc_gen_rand_int(list_len);
 
-	assert(!is_sorted(list_len, list));
-	quick_sort(list_len, list);
-	assert(is_sorted(list_len, list));
+	assert(!mc_is_sorted(list_len, list, size, mc_int_compare));
+	quick_sort(list_len, list, size, mc_int_compare);
+	assert(mc_is_sorted(list_len, list, size, mc_int_compare));
 
 	free(list);
 }
 
-bool is_sorted(size_t list_len, int list[list_len])
+void test_double_sort(size_t const list_len)
 {
-	for (size_t i = 0; i < list_len - 1; i++) {
-		if (list[i] > list[i + 1]) {
-			return false;
-		}
-	}
-	return true;
+        size_t size = sizeof(double);
+        void *list = mc_gen_rand_double(list_len);
+
+	assert(!mc_is_sorted(list_len, list, size, mc_double_compare));
+	quick_sort(list_len, list, size, mc_double_compare);
+	assert(mc_is_sorted(list_len, list, size, mc_double_compare));
+
+	free(list);
 }
 
-void quick_sort(size_t len, int *list)
+void quick_sort(size_t len, void *list, size_t size,
+        int (*compare)(void const *a, void const *b))
 {
-        quick_sort2(list, &list[len - 1], sizeof(int), mc_int_compare);
+        quick_sort2(list, ((unsigned char *)list) + (len - 1) * size, size,
+                compare);
 }
 
 void quick_sort2(void *start, void *end, size_t size,
