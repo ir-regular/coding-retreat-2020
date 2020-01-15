@@ -8,8 +8,11 @@ bool mc_is_sorted(size_t len, void *list, size_t size,
 void mc_merge_sort(size_t len, void *list, size_t size,
 		   int (*mc_compare)(const void *a, const void *b));
 
-int mc_int_compare(void const *a, void const *b);
+void mc_quick_sort(size_t len, void *list, size_t size,
+		   int (*mc_compare)(const void *a, const void *b));
 
-int mc_double_compare(void const *a, void const *b);
+int mc_int_compare(const void *a, const void *b);
+
+int mc_double_compare(void const *a, const void *b);
 
 #endif

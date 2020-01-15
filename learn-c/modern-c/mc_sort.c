@@ -2,7 +2,7 @@
 #include <string.h>
 #include "mc_sort.h"
 
-int mc_int_compare(void const *a, void const *b)
+int mc_int_compare(const void *a, const void *b)
 {
 	int const *int_a = a;
 	int const *int_b = b;
@@ -10,7 +10,7 @@ int mc_int_compare(void const *a, void const *b)
 	return *int_a > *int_b ? 1 : (*int_a == *int_b ? 0 : -1);
 }
 
-int mc_double_compare(void const *a, void const *b)
+int mc_double_compare(const void *a, const void *b)
 {
 	double const *double_a = a;
 	double const *double_b = b;
@@ -101,4 +101,87 @@ void merge(size_t list_len, void *list, size_t buffer_len, void *buffer,
 			memmove(result_i, buffer_i, size);
 		}
 	}
+}
+
+void quick_sort2(void *start, void *end, size_t size,
+		 int (*mc_compare)(const void *a, const void *b), void *pivot_buf,
+		 void *swap_buf);
+void *partition(void *start, void *end, size_t size,
+		int (*mc_compare)(const void *a, const void *b), void *pivot_buf,
+		void *swap_buf);
+void swap(void *a, void *b, void *buf, size_t size);
+
+void mc_quick_sort(size_t len, void *list, size_t size,
+		   int (*mc_compare)(const void *a, const void *b))
+{
+	void *pivot_buf = malloc(size);
+	void *swap_buf = malloc(size);
+
+	quick_sort2(list, ((unsigned char *)list) + (len - 1) * size, size,
+		    mc_compare, pivot_buf, swap_buf);
+
+	free(swap_buf);
+	free(pivot_buf);
+}
+
+void quick_sort2(void *start, void *end, size_t size,
+		 int (*mc_compare)(const void *a, const void *b), void *pivot_buf,
+		 void *swap_buf)
+{
+	if (end <= start) {
+		return;
+	}
+
+	unsigned char *pivot_p =
+		partition(start, end, size, mc_compare, pivot_buf, swap_buf);
+
+	if (pivot_p > (unsigned char *)start) {
+		quick_sort2(start, pivot_p, size, mc_compare, pivot_buf, swap_buf);
+	}
+
+	quick_sort2(pivot_p + size, end, size, mc_compare, pivot_buf, swap_buf);
+}
+
+void *partition(void *start, void *end, size_t size,
+		int (*mc_compare)(const void *a, const void *b), void *pivot_buf,
+		void *swap_buf)
+{
+	unsigned char *start_p = start;
+	unsigned char *end_p = end;
+
+	// you'd think you could eliminate size by combining the lines below,
+	// but no: mid_index calculation uses integer division which rounds
+	// down to 0
+	size_t mid_index = (end_p - start_p) / (size * 2);
+	unsigned char *pivot_source = start_p + mid_index * size;
+
+	memmove(pivot_buf, pivot_source, size);
+
+	unsigned char *less_than = start_p - size;
+	unsigned char *more_than = end_p + size;
+
+	while (true) {
+		do {
+			less_than += size;
+		} while (mc_compare(less_than, pivot_buf) == -1);
+
+		do {
+			more_than -= size;
+		} while (mc_compare(more_than, pivot_buf) == 1);
+
+		if (more_than <= less_than) {
+			break;
+		}
+
+		swap(less_than, more_than, swap_buf, size);
+	}
+
+	return more_than;
+}
+
+void swap(void *a, void *b, void *buf, size_t size)
+{
+	memmove(buf, a, size);
+	memmove(a, b, size);
+	memmove(b, buf, size);
 }
