@@ -9,7 +9,8 @@
 
 bool is_sorted(size_t list_len, int list[list_len]);
 void quick_sort(size_t len, int list[len]);
-void quick_sort2(size_t start, size_t end, void *list);
+void quick_sort2(void *start, void *end, size_t size,
+        int (*compare)(void const *a, void const *b));
 void *partition(void *start, void *end, size_t size,
         int (*compare)(void const *a, void const *b));
 void swap(void *a, void *b, void *buf, size_t size);
@@ -88,27 +89,23 @@ bool is_sorted(size_t list_len, int list[list_len])
 
 void quick_sort(size_t len, int *list)
 {
-        quick_sort2(0, len - 1, list);
+        quick_sort2(list, &list[len - 1], sizeof(int), mc_int_compare);
 }
 
-void quick_sort2(size_t start, size_t end, void *list)
+void quick_sort2(void *start, void *end, size_t size,
+        int (*compare)(void const *a, void const *b))
 {
 	if (end <= start) {
 		return;
 	}
 
-        size_t const size = sizeof(int);
+	unsigned char *pivot_p = partition(start, end, size, compare);
 
-        unsigned char *list_p = list;
-	unsigned char *pivot_p = partition(list_p + start * size, list_p + end * size, size, mc_int_compare);
-
-	ptrdiff_t pivot_i = (pivot_p - list_p) / size;
-
-	if (pivot_i > 0) {
-		quick_sort2(start, pivot_i, list);
+	if (pivot_p > (unsigned char *)start) {
+		quick_sort2(start, pivot_p, size, compare);
 	}
 
-	quick_sort2(pivot_i + 1, end, list);
+	quick_sort2(pivot_p + size, end, size, compare);
 }
 
 void *partition(void *start, void *end, size_t size,
