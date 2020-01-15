@@ -11,48 +11,57 @@ unsigned *mc_gen_rand_unsigned(size_t len)
 {
 	unsigned *list = malloc(len * sizeof(unsigned));
 
-	if (!list) {
-		return 0;
+	if (list) {
+                mc_init_rand_unsigned(len, list);
 	}
 
+	return list;
+}
+
+void mc_init_rand_unsigned(size_t len, unsigned list[len])
+{
 	for (size_t i = 0; i < len; i++) {
 		// by definition is unsigned
 		// lowest value random() returns is 0
 		list[i] = random();
 	}
-
-	return list;
 }
 
 int *mc_gen_rand_int(size_t len)
 {
 	int *list = malloc(len * sizeof(int));
 
-	if (!list) {
-		return 0;
-	}
-
-	for (size_t i = 0; i < len; i++) {
-		int value = random();
-		list[i] = (random() % 2 == 0) ? value : -value;
+	if (list) {
+		mc_init_rand_int(len, list);
 	}
 
 	return list;
+}
+
+void mc_init_rand_int(size_t len, int list[len])
+{
+        for (size_t i = 0; i < len; i++) {
+		int value = random();
+		list[i] = (random() % 2 == 0) ? value : -value;
+	}
 }
 
 double *mc_gen_rand_double(size_t len)
 {
 	double *list = malloc(len * sizeof(double));
 
-	if (!list) {
-		return 0;
-	}
-
-	for (size_t i = 0; i < len; i++) {
-		int value = random();
-		value = (random() % 2 == 0) ? value : -value;
-		list[i] = value / DBL_MAX;
+	if (list) {
+		mc_init_rand_double(len, list);
 	}
 
 	return list;
+}
+
+void mc_init_rand_double(size_t len, double list[len])
+{
+        for (size_t i = 0; i < len; i++) {
+                int value = random();
+                value = (random() % 2 == 0) ? value : -value;
+                list[i] = value / DBL_MAX;
+        }
 }
