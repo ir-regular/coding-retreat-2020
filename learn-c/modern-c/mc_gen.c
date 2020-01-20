@@ -12,7 +12,7 @@ unsigned *mc_gen_rand_unsigned(size_t len)
 	unsigned *list = malloc(len * sizeof(unsigned));
 
 	if (list) {
-                mc_init_rand_unsigned(len, list);
+		mc_init_rand_unsigned(len, list);
 	}
 
 	return list;
@@ -40,7 +40,7 @@ int *mc_gen_rand_int(size_t len)
 
 void mc_init_rand_int(size_t len, int list[len])
 {
-        for (size_t i = 0; i < len; i++) {
+	for (size_t i = 0; i < len; i++) {
 		int value = random();
 		list[i] = (random() % 2 == 0) ? value : -value;
 	}
@@ -59,9 +59,9 @@ double *mc_gen_rand_double(size_t len)
 
 void mc_init_rand_double(size_t len, double list[len])
 {
-        for (size_t i = 0; i < len; i++) {
-                int value = random();
-                value = (random() % 2 == 0) ? value : -value;
-                list[i] = value / DBL_MAX;
-        }
+	for (size_t i = 0; i < len; i++) {
+		int value = random();
+		value = (random() % 2 == 0) ? value : -value;
+		list[i] = value / DBL_MAX;
+	}
 }

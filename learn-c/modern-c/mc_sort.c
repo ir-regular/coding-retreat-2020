@@ -104,11 +104,11 @@ void merge(size_t list_len, void *list, size_t buffer_len, void *buffer,
 }
 
 void quick_sort2(void *start, void *end, size_t size,
-		 int (*mc_compare)(const void *a, const void *b), void *pivot_buf,
-		 void *swap_buf);
+		 int (*mc_compare)(const void *a, const void *b),
+		 void *pivot_buf, void *swap_buf);
 void *partition(void *start, void *end, size_t size,
-		int (*mc_compare)(const void *a, const void *b), void *pivot_buf,
-		void *swap_buf);
+		int (*mc_compare)(const void *a, const void *b),
+		void *pivot_buf, void *swap_buf);
 void swap(void *a, void *b, void *buf, size_t size);
 
 void mc_quick_sort(size_t len, void *list, size_t size,
@@ -125,8 +125,8 @@ void mc_quick_sort(size_t len, void *list, size_t size,
 }
 
 void quick_sort2(void *start, void *end, size_t size,
-		 int (*mc_compare)(const void *a, const void *b), void *pivot_buf,
-		 void *swap_buf)
+		 int (*mc_compare)(const void *a, const void *b),
+		 void *pivot_buf, void *swap_buf)
 {
 	if (end <= start) {
 		return;
@@ -136,15 +136,16 @@ void quick_sort2(void *start, void *end, size_t size,
 		partition(start, end, size, mc_compare, pivot_buf, swap_buf);
 
 	if (pivot_p > (unsigned char *)start) {
-		quick_sort2(start, pivot_p, size, mc_compare, pivot_buf, swap_buf);
+		quick_sort2(start, pivot_p, size, mc_compare, pivot_buf,
+			    swap_buf);
 	}
 
 	quick_sort2(pivot_p + size, end, size, mc_compare, pivot_buf, swap_buf);
 }
 
 void *partition(void *start, void *end, size_t size,
-		int (*mc_compare)(const void *a, const void *b), void *pivot_buf,
-		void *swap_buf)
+		int (*mc_compare)(const void *a, const void *b),
+		void *pivot_buf, void *swap_buf)
 {
 	unsigned char *start_p = start;
 	unsigned char *end_p = end;

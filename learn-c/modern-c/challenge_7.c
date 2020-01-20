@@ -10,8 +10,8 @@ bool bfs(size_t const node_count, bool graph[node_count][node_count],
 {
 	// has this node been searched?
 	bool seen[node_count];
-	memset(seen, false,
-	       node_count); // (defaults all elements to 0, which is false)
+	// (defaults all elements to 0, which is false)
+	memset(seen, false, node_count);
 
 	// there can be max (node_count) nodes in the queue, if we do not re-queue
 	// them

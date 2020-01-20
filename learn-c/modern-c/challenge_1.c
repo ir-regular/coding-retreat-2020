@@ -25,9 +25,9 @@ void test_int_sort(size_t list_len)
 	size_t size = sizeof(int);
 	int *list = malloc(list_len * size);
 
-        if (list == 0) {
-                exit(EXIT_FAILURE);
-        }
+	if (list == 0) {
+		exit(EXIT_FAILURE);
+	}
 
 	mc_init_rand_int(list_len, list);
 
@@ -53,13 +53,13 @@ void test_double_sort(size_t list_len)
 		exit(EXIT_FAILURE);
 	}
 
-        mc_init_rand_double(list_len, list);
+	mc_init_rand_double(list_len, list);
 
 	assert(!mc_is_sorted(list_len, list, size, mc_double_compare));
 	mc_merge_sort(list_len, list, size, mc_double_compare);
 	assert(mc_is_sorted(list_len, list, size, mc_double_compare));
 
-        mc_init_rand_double(list_len, list);
+	mc_init_rand_double(list_len, list);
 
 	assert(!mc_is_sorted(list_len, list, size, mc_double_compare));
 	mc_quick_sort(list_len, list, size, mc_double_compare);
