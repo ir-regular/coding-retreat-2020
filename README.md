@@ -42,6 +42,14 @@ and also I need to learn Erlang.
 - :link: [Learning C++](https://blog.tartanllama.xyz/learning-cpp/), Sy Brand - article, includes links to good blogs
 - :card_index_dividers: [C++ 2003](https://ankiweb.net/shared/info/1219517843) - a public Anki deck based on C++ Primer, 4th edition
 
+### Other
+
+- [Oberon-07](https://inf.ethz.ch/personal/wirth/Oberon/Oberon07.Report.pdf)
+- [WebAssembly spec](https://webassembly.github.io/spec/)
+- [WebAssembly VM](https://github.com/WAVM/WAVM/)
+- [WebAssembly Binary Toolkit](https://github.com/WebAssembly/wabt)
+- [Mozilla WebAssembly docs](https://developer.mozilla.org/en-US/docs/WebAssembly)
+
 ## Write a toy compiler
 
 I have actually written more than one interpreter over the years, but never had to deal with a "...to assembly" part, or optimization.
@@ -134,6 +142,8 @@ Turns out I messed up terminology: CTFs are competitions with specific dates, wh
 - [Some good "Statistics for programmers" resources](https://jvns.ca/blog/2017/04/17/statistics-for-programmers/)
 - [Think Stats](https://greenteapress.com/thinkstats/)
 - [Statistics Done Wrong](https://www.statisticsdonewrong.com/)
+
+## 
 
 ## General resources
 
