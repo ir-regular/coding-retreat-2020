@@ -129,6 +129,12 @@ Turns out I messed up terminology: CTFs are competitions with specific dates, wh
 - [NXP i.MX7D Starter Kit](https://shop.technexion.com/pico-pi-imx7-startkit-rainbow-hat.html) for Android Things
 - there exists a [London Hackspace](https://london.hackspace.org.uk/) except, annoyingly, the whole of London is in the way
 
+## Statistics
+
+- [Some good "Statistics for programmers" resources](https://jvns.ca/blog/2017/04/17/statistics-for-programmers/)
+- [Think Stats](https://greenteapress.com/thinkstats/)
+- [Statistics Done Wrong](https://www.statisticsdonewrong.com/)
+
 ## General resources
 
 - https://learnawesome.org/
