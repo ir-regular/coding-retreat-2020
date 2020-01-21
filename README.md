@@ -133,3 +133,21 @@ Turns out I messed up terminology: CTFs are competitions with specific dates, wh
 
 - https://learnawesome.org/
 - [Emoji that work in Github](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md), a cheatsheet
+
+## General reading list
+
+Lots of biographies. Some of them I have, some of them I don't, may add / remove books over time.
+
+- [ ] Hackers: Heroes of the Computer Revolution by Steven Levy
+- [ ] Surely You're Joking, Mr. Feynman! by Richard Feynman
+- [ ] What Do You Care What Other People Think? by Richard Feynman
+- [ ] A Mind at Play, by Jimmy Soni and Rob Goodman
+- [ ] Gödel, Escher, Bach: an Eternal Golden Braid by Douglas Hofstadter
+- [ ] A Brief History of Time by Stephen Hawking
+- [ ] The Strangest Man: The hidden Life of Paul Dirac, Quantum Genius by Graham Farmelo
+- [ ] American Prometheus: The Triumph and Tragedy of J. Robert Oppenheimer
+- [ ] Where Wizards Stay Up Late: The Origins of the Internet by Katie Hafner
+- [ ] The Idea Factory: Bell Labs and the Great Age of American Innovation by Jon Gertner
+- [ ] Ghost In The Wires by Kevin Mitnick
+- [ ] Programming Pearls by Jon Bentley
+- [ ] Writing Efficient Programs by Jon Bentley
