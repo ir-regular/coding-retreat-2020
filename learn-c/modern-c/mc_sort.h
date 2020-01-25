@@ -15,4 +15,8 @@ int mc_int_compare(const void *a, const void *b);
 
 int mc_double_compare(void const *a, const void *b);
 
+void mc_merge(size_t list_len, void *list, size_t buffer_len, void *buffer,
+	      void *result, size_t size,
+	      int (*mc_compare)(const void *a, const void *b));
+
 #endif

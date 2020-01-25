@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+#include <pthread.h>
 #include "mc_sort.h"
 
 int mc_int_compare(const void *a, const void *b)
@@ -33,10 +34,6 @@ bool mc_is_sorted(size_t len, void *list, size_t size,
 
 void merge_sort2(size_t len, void *list, void *buffer, void *sorted_list,
 		 size_t size, int (*mc_compare)(const void *a, const void *b));
-
-void merge(size_t list_len, void *list, size_t buffer_len, void *buffer,
-	   void *result, size_t size,
-	   int (*mc_compare)(const void *a, const void *b));
 
 void mc_merge_sort(size_t len, void *list, size_t size,
 		   int (*mc_compare)(const void *a, const void *b))
@@ -76,13 +73,13 @@ void merge_sort2(size_t len, void *list, void *buffer, void *sorted_list,
 		memmove(buffer, list + half_len * size, size);
 	}
 
-	merge(half_len, list, buffer_len, buffer, sorted_list, size,
-	      mc_compare);
+	mc_merge(half_len, list, buffer_len, buffer, sorted_list, size,
+		 mc_compare);
 }
 
-void merge(size_t list_len, void *list, size_t buffer_len, void *buffer,
-	   void *result, size_t size,
-	   int (*mc_compare)(const void *a, const void *b))
+void mc_merge(size_t list_len, void *list, size_t buffer_len, void *buffer,
+	      void *result, size_t size,
+	      int (*mc_compare)(const void *a, const void *b))
 {
 	void *list_i = list + list_len * size;
 	void *buffer_i = buffer + buffer_len * size;
@@ -110,6 +107,10 @@ void *partition(void *start, void *end, size_t size,
 		int (*mc_compare)(const void *a, const void *b),
 		void *pivot_buf, void *swap_buf);
 void swap(void *a, void *b, void *buf, size_t size);
+
+static pthread_key_t swap_buf_key;
+static pthread_key_t pivot_buf_key;
+static pthread_once_t key_once = PTHREAD_ONCE_INIT;
 
 void mc_quick_sort(size_t len, void *list, size_t size,
 		   int (*mc_compare)(const void *a, const void *b))
