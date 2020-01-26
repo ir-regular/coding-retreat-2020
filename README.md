@@ -59,7 +59,6 @@ I have actually written more than one interpreter over the years, but never had 
 - [Let's Build a Compiler](https://compilers.iecc.com/crenshaw/), Jack Crenshaw
 - [Writing a C Compiler](https://norasandler.com/archive/), Nora Sadler (based on Ghuloum’s paper)
 - [Someone's nice summary on Stackoverflow](https://softwareengineering.stackexchange.com/a/165558)
-- [Compilers](https://lagunita.stanford.edu/courses/Engineering/Compilers/Fall2014/about), a course from Stanford University
 
 ### Books
 
@@ -69,6 +68,22 @@ I have actually written more than one interpreter over the years, but never had 
 - Compiler Construction, Niklaus Wirth
 - [Practical Compiler Construction](http://www.t3x.org/reload/index.html), Nils Holm
 - A Retargetable C Compiler: Design and Implementation describes [lcc](https://sites.google.com/site/lccretargetablecompiler/) - [toc](https://sites.google.com/site/lccretargetablecompiler/toc) and [lcc v. 4.2 code](https://github.com/drh/lcc), not the same as the version described in the book
+- [Essentials of Compilation](https://github.com/IUCompilerCourse/Essentials-of-Compilation)
+- [Modern Compiler Implementation in C](https://www.cs.princeton.edu/~appel/modern/c/), Andrew Appel, Maia Ginsburg
+- [Modern Compiler Implementation in ML](https://www.cs.princeton.edu/~appel/modern/ml/), Andrew Appel
+
+### University courses
+
+- [Stanford University, Compilers, 2014](https://lagunita.stanford.edu/courses/Engineering/Compilers/Fall2014/about) - [Carnegie Mellon University, 15-411 Compiler Design](https://www.cs.cmu.edu/~fp/courses/15411-f14/)
+- [Carnegie Mellon University, 15-417 HOT Compilation](https://www.cs.cmu.edu/~crary/hotc-f15/)
+- [UC Berkeley, UCB CS294-113: Virtual Machines and Managed Runtimes](http://www.wolczko.com/CS294/)
+- [University of Maryland, CMSC430: Introduction to Compilers](http://www.cs.umd.edu/class/fall2017/cmsc430/)
+- [UC San Diego, CSE131: Compiler Construction, 2018](https://ucsd-cse131-s18.github.io/)
+- [UC San Diego, CSE131: Compiler Design, 2016](https://ucsd-progsys.github.io/131-web/)
+- [Swarthmore College, CS75: Principles of Compiler Design, 2016](https://www.cs.swarthmore.edu/~jpolitz/cs75/s16/index.html)
+- [Swarthmore College, CS75: Compilers 2019](https://www.cs.swarthmore.edu/~zpalmer/cs75/s19/)
+- [University of Pennsylvania, CIS 341 - Compilers, 2020](https://www.cis.upenn.edu/~cis341/current/)
+- [Northeastern University, CS 4410/6410: Compiler Design, 2020](https://courses.ccs.neu.edu/cs4410/)
 
 ### Papers
 
