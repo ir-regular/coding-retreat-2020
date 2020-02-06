@@ -130,3 +130,14 @@ class Priceable t where
 
 totalPrice :: Priceable p => [p] -> Integer
 totalPrice = sum . map price
+
+data Complex = C Double Double deriving (Show, Eq)
+
+instance Num Complex where
+  (C a1 b1) + (C a2 b2) = C (a1 + a2) (b1 + b2)
+  (C a1 b1) - (C a2 b2) = C (a1 - a2) (b1 - b2)
+  (C a1 b1) * (C a2 b2) = C (a1 * a2 - b1 * b2) (a1 * b2 + a2 * b1)
+  negate (C a b)        = C (negate a) (negate b)
+  fromInteger i         = C (fromInteger i) 0
+  abs (C a b)           = C (sqrt $ a * a + b * b) 0
+  signum c@(C a b)      = C (a / x) (b / x) where C x _ = abs c
