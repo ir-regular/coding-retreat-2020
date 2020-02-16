@@ -48,14 +48,13 @@ kMeans' points =
   do prevCentrs  <- gets centroids
      let assignments = clusterAssignments prevCentrs points
          newCentrs   = newCentroids assignments
-       in do
-         modify (\s -> s { centroids = newCentrs })
-         modify (\s -> s { steps = steps s + 1})
-         t <- gets threshold
-         let err = sum $ zipWith distance prevCentrs newCentrs in
-           if err < t
-             then return newCentrs
-             else kMeans' points
+     modify (\s -> s { centroids = newCentrs })
+     modify (\s -> s { steps = steps s + 1})
+     t <- gets threshold
+     let err = sum $ zipWith distance prevCentrs newCentrs
+     if err < t
+       then return newCentrs
+       else kMeans' points
 
 initialState :: (Vector v, Vectorizable e v)
              => (Int -> [e] -> [v]) -> Int -> [e] -> Double -> KMeansState v
