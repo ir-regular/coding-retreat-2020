@@ -6,6 +6,8 @@ import Data.List
 import qualified Data.Map as M
 import Data.Default
 import Control.Monad.State
+import Control.Monad.Reader
+import Control.Monad.RWS
 
 -- some base types for maths, copied from KMeans
 
@@ -43,25 +45,46 @@ clusterAssignments centrs points =
                     in M.adjust (p:) chosenCentroid m)
            initialMap points
 
-kMeans' :: (Vector v, Vectorizable e v) => [e] -> State (KMeansState v) [v]
+-- v3:
+
+--  kMeans' :: (Vector v, Vectorizable e v) => [e] -> State (KMeansState v) [v]
+--  kMeans' points =
+--    do prevCentrs  <- gets centroids
+--       let assignments = clusterAssignments prevCentrs points
+--           newCentrs   = newCentroids assignments
+--       modify (\s -> s { centroids = newCentrs })
+--       modify (\s -> s { steps = steps s + 1})
+--       t <- gets threshold
+--       let err = sum $ zipWith distance prevCentrs newCentrs
+--       if err < t
+--         then return newCentrs
+--         else kMeans' points
+
+-- v5:
+
+-- RWS expects three arguments:
+-- r (read-only): Reader Double, to hold threshold
+-- w (write-only): Writer (Sum Int), to hold number of iterations
+--    (must use a Monoid - specifies Sum because there is also Product)
+-- s (state): State [v], to hold a vector of centroids
+
+kMeans' :: (Vector v, Vectorizable e v) => [e] -> RWS Double (Sum Int) [v] ()
 kMeans' points =
-  do prevCentrs  <- gets centroids
+  do prevCentrs  <- get
      let assignments = clusterAssignments prevCentrs points
          newCentrs   = newCentroids assignments
-     modify (\s -> s { centroids = newCentrs })
-     modify (\s -> s { steps = steps s + 1})
-     t <- gets threshold
+     put newCentrs
+     tell (Sum 1)
+     t <- ask
      let err = sum $ zipWith distance prevCentrs newCentrs
-     if err < t
-       then return newCentrs
-       else kMeans' points
+     unless (err < t) $ kMeans' points
 
 initialState :: (Vector v, Vectorizable e v)
              => (Int -> [e] -> [v]) -> Int -> [e] -> Double -> KMeansState v
 initialState init k points threshold = KMeansState (init k points) threshold 0
 
-kMeans :: (Vector v, Vectorizable e v) => (Int -> [e] -> [v]) -> Int -> [e] -> Double -> [v]
-kMeans init k points threshold = evalState (kMeans' points) (initialState init k points threshold)
+kMeans :: (Vector v, Vectorizable e v) => (Int -> [e] -> [v]) -> Int -> [e] -> Double -> ([v], Sum Int)
+kMeans init k points threshold = execRWS (kMeans' points) threshold (init k points)
 
 initializeSimple :: Int -> [e] -> [(Double,Double)]
 initializeSimple 0 _ = []
@@ -71,3 +94,17 @@ initializeSimple n v = (fromIntegral n, fromIntegral n) : initializeSimple (n-1)
 -- kMeans initializeSimple 2 ([(1,1),(1,2),(4,4),(4,5)]::[(Double,Double)]) 0.001
 -- should return:
 -- [(1.0,1.5),(4.0,4.5)]
+
+-- you could also use read-only config for kMeans, then you only need to pass the points
+
+data Settings e v = Settings { i :: Int -> [e] -> [v], k :: Int, th :: Double }
+
+kMeansMain :: (Vector v, Vectorizable e v) => [e] -> Reader (Settings e v) ([v], Sum Int)
+kMeansMain points = do i' <- asks i
+                       k' <- asks k
+                       t' <- asks th
+                       return $ kMeans i' k' points t'
+
+-- test with:
+-- defSet = Settings { i = initializeSimple, k = 2, th = 0.001 }
+-- runReader (kMeansMain ([(1,1),(1,2),(4,4),(4,5)]::[(Double,Double)])) defSet
