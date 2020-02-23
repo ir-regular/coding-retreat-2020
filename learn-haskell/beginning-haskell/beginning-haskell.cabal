@@ -18,8 +18,8 @@ build-type:          Simple
 
 executable beginning-haskell
   main-is:             Main.hs
-  -- other-modules:
+  other-modules:       Chapter8.GuessTheNumber
   -- other-extensions:
-  build-depends:       base >=4.13 && <4.14, containers, data-default, lens, mtl, logict
+  build-depends:       base >=4.13 && <4.14, containers, data-default, lens, mtl, logict, random
   hs-source-dirs:      src
   default-language:    Haskell2010
